@@ -1,0 +1,1 @@
+#To be updated with commands and steps as Chris goes through the rooting process on his Nexus 6P
