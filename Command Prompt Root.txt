@@ -1,0 +1,342 @@
+Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\chris>fastboot
+usage: fastboot [ <option> ] <command>
+
+commands:
+  update <filename>                        reflash device from update.zip
+  flashall                                 flash boot, system, vendor and if found,
+                                           recovery
+  flash <partition> [ <filename> ]         write a file to a flash partition
+  flashing lock                            locks the device. Prevents flashing                                           partitions
+  flashing unlock                          unlocks the device. Allows user to                                           flash any partition except the ones                                           that are related to bootloader
+  flashing lock_critical                   Prevents flashing bootloader related                                           partitions
+  flashing unlock_critical                 Enables flashing bootloader related                                           partitions
+  flashing get_unlock_ability              Queries bootloader to see if the                                           device is unlocked
+  erase <partition>                        erase a flash partition
+  format[:[<fs type>][:[<size>]] <partition> format a flash partition.
+                                           Can override the fs type and/or
+                                           size the bootloader reports.
+  getvar <variable>                        display a bootloader variable
+  boot <kernel> [ <ramdisk> ]              download and boot kernel
+  flash:raw boot <kernel> [ <ramdisk> ]    create bootimage and flash it
+  devices                                  list all connected devices
+  continue                                 continue with autoboot
+  reboot [bootloader]                      reboot device, optionally into bootloader
+  reboot-bootloader                        reboot device into bootloader
+  help                                     show this help message
+
+options:
+  -w                                       erase userdata and cache (and format
+                                           if supported by partition type)
+  -u                                       do not first erase partition before
+                                           formatting
+  -s <specific device>                     specify device serial number
+                                           or path to device port
+  -l                                       with "devices", lists device paths
+  -p <product>                             specify product name
+  -c <cmdline>                             override kernel commandline
+  -i <vendor id>                           specify a custom USB vendor id
+  -b <base_addr>                           specify a custom kernel base address.
+                                           default: 0x10000000
+  -n <page size>                           specify the nand page size.
+                                           default: 2048
+  -S <size>[K|M|G]                         automatically sparse files greater
+                                           than size.  0 to disable
+
+C:\Users\chris>fastboot devices
+8XV7N16A26000507        fastboot
+
+C:\Users\chris>fastboot oem unlock
+...
+FAILED (remote: unknown command)
+finished. total time: 0.014s
+
+C:\Users\chris>fastboot oem unlock
+...
+FAILED (remote: unknown command)
+finished. total time: 0.006s
+
+C:\Users\chris>fastboot devices
+8XV7N16A26000507        fastboot
+
+C:\Users\chris>fastboot oem unlock
+...
+FAILED (remote: unknown command)
+finished. total time: 0.006s
+
+C:\Users\chris>fastboot flashing unlock
+...
+(bootloader) Please select 'YES' on screen if you want to continue...
+(bootloader) Unlocking bootloader...
+(bootloader) Unlocked!
+OKAY [ 27.473s]
+finished. total time: 27.474s
+
+C:\Users\chris>cd desktop
+
+C:\Users\chris\Desktop>cd Nexus6P-root-master
+
+C:\Users\chris\Desktop\Nexus6P-root-master>fastboot flashing recovery twrp-3.1.1-0-angler.img
+usage: fastboot [ <option> ] <command>
+
+commands:
+  update <filename>                        reflash device from update.zip
+  flashall                                 flash boot, system, vendor and if found,
+                                           recovery
+  flash <partition> [ <filename> ]         write a file to a flash partition
+  flashing lock                            locks the device. Prevents flashing                                           partitions
+  flashing unlock                          unlocks the device. Allows user to                                           flash any partition except the ones                                           that are related to bootloader
+  flashing lock_critical                   Prevents flashing bootloader related                                           partitions
+  flashing unlock_critical                 Enables flashing bootloader related                                           partitions
+  flashing get_unlock_ability              Queries bootloader to see if the                                           device is unlocked
+  erase <partition>                        erase a flash partition
+  format[:[<fs type>][:[<size>]] <partition> format a flash partition.
+                                           Can override the fs type and/or
+                                           size the bootloader reports.
+  getvar <variable>                        display a bootloader variable
+  boot <kernel> [ <ramdisk> ]              download and boot kernel
+  flash:raw boot <kernel> [ <ramdisk> ]    create bootimage and flash it
+  devices                                  list all connected devices
+  continue                                 continue with autoboot
+  reboot [bootloader]                      reboot device, optionally into bootloader
+  reboot-bootloader                        reboot device into bootloader
+  help                                     show this help message
+
+options:
+  -w                                       erase userdata and cache (and format
+                                           if supported by partition type)
+  -u                                       do not first erase partition before
+                                           formatting
+  -s <specific device>                     specify device serial number
+                                           or path to device port
+  -l                                       with "devices", lists device paths
+  -p <product>                             specify product name
+  -c <cmdline>                             override kernel commandline
+  -i <vendor id>                           specify a custom USB vendor id
+  -b <base_addr>                           specify a custom kernel base address.
+                                           default: 0x10000000
+  -n <page size>                           specify the nand page size.
+                                           default: 2048
+  -S <size>[K|M|G]                         automatically sparse files greater
+                                           than size.  0 to disable
+
+C:\Users\chris\Desktop\Nexus6P-root-master>NEW MESSAGES
+'NEW' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\chris\Desktop\Nexus6P-root-master>fastboot flashing recovery twrp-3.1.1-0-angler.img
+usage: fastboot [ <option> ] <command>
+
+commands:
+  update <filename>                        reflash device from update.zip
+  flashall                                 flash boot, system, vendor and if found,
+                                           recovery
+  flash <partition> [ <filename> ]         write a file to a flash partition
+  flashing lock                            locks the device. Prevents flashing                                           partitions
+  flashing unlock                          unlocks the device. Allows user to                                           flash any partition except the ones                                           that are related to bootloader
+  flashing lock_critical                   Prevents flashing bootloader related                                           partitions
+  flashing unlock_critical                 Enables flashing bootloader related                                           partitions
+  flashing get_unlock_ability              Queries bootloader to see if the                                           device is unlocked
+  erase <partition>                        erase a flash partition
+  format[:[<fs type>][:[<size>]] <partition> format a flash partition.
+                                           Can override the fs type and/or
+                                           size the bootloader reports.
+  getvar <variable>                        display a bootloader variable
+  boot <kernel> [ <ramdisk> ]              download and boot kernel
+  flash:raw boot <kernel> [ <ramdisk> ]    create bootimage and flash it
+  devices                                  list all connected devices
+  continue                                 continue with autoboot
+  reboot [bootloader]                      reboot device, optionally into bootloader
+  reboot-bootloader                        reboot device into bootloader
+  help                                     show this help message
+
+options:
+  -w                                       erase userdata and cache (and format
+                                           if supported by partition type)
+  -u                                       do not first erase partition before
+                                           formatting
+  -s <specific device>                     specify device serial number
+                                           or path to device port
+  -l                                       with "devices", lists device paths
+  -p <product>                             specify product name
+  -c <cmdline>                             override kernel commandline
+  -i <vendor id>                           specify a custom USB vendor id
+  -b <base_addr>                           specify a custom kernel base address.
+                                           default: 0x10000000
+  -n <page size>                           specify the nand page size.
+                                           default: 2048
+  -S <size>[K|M|G]                         automatically sparse files greater
+                                           than size.  0 to disable
+
+C:\Users\chris\Desktop\Nexus6P-root-master>adb devices
+List of devices attached
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+8XV7N16A26000507        unauthorized
+
+
+C:\Users\chris\Desktop\Nexus6P-root-master>adb reboot bootloader
+
+C:\Users\chris\Desktop\Nexus6P-root-master>fastboot flashing recovery twrp-3.1.1-0-angler.img
+usage: fastboot [ <option> ] <command>
+
+commands:
+  update <filename>                        reflash device from update.zip
+  flashall                                 flash boot, system, vendor and if found,
+                                           recovery
+  flash <partition> [ <filename> ]         write a file to a flash partition
+  flashing lock                            locks the device. Prevents flashing                                           partitions
+  flashing unlock                          unlocks the device. Allows user to                                           flash any partition except the ones                                           that are related to bootloader
+  flashing lock_critical                   Prevents flashing bootloader related                                           partitions
+  flashing unlock_critical                 Enables flashing bootloader related                                           partitions
+  flashing get_unlock_ability              Queries bootloader to see if the                                           device is unlocked
+  erase <partition>                        erase a flash partition
+  format[:[<fs type>][:[<size>]] <partition> format a flash partition.
+                                           Can override the fs type and/or
+                                           size the bootloader reports.
+  getvar <variable>                        display a bootloader variable
+  boot <kernel> [ <ramdisk> ]              download and boot kernel
+  flash:raw boot <kernel> [ <ramdisk> ]    create bootimage and flash it
+  devices                                  list all connected devices
+  continue                                 continue with autoboot
+  reboot [bootloader]                      reboot device, optionally into bootloader
+  reboot-bootloader                        reboot device into bootloader
+  help                                     show this help message
+
+options:
+  -w                                       erase userdata and cache (and format
+                                           if supported by partition type)
+  -u                                       do not first erase partition before
+                                           formatting
+  -s <specific device>                     specify device serial number
+                                           or path to device port
+  -l                                       with "devices", lists device paths
+  -p <product>                             specify product name
+  -c <cmdline>                             override kernel commandline
+  -i <vendor id>                           specify a custom USB vendor id
+  -b <base_addr>                           specify a custom kernel base address.
+                                           default: 0x10000000
+  -n <page size>                           specify the nand page size.
+                                           default: 2048
+  -S <size>[K|M|G]                         automatically sparse files greater
+                                           than size.  0 to disable
+
+C:\Users\chris\Desktop\Nexus6P-root-master>twrp-3.1.1-0-angler.img
+
+C:\Users\chris\Desktop\Nexus6P-root-master>twrp-3.1.1-0-angler.img
+
+C:\Users\chris\Desktop\Nexus6P-root-master>"twrp-3.1.1-0-angler (1).img"
+
+C:\Users\chris\Desktop\Nexus6P-root-master>twrp-3.1.1-0-angler.img
+
+C:\Users\chris\Desktop\Nexus6P-root-master>twrp-3.1.1-0-angler.img
+
+C:\Users\chris\Desktop\Nexus6P-root-master>twrp-3.1.1-0-angler.img
+
+C:\Users\chris\Desktop\Nexus6P-root-master>fastboot flashing recovery twrp-3.1.1-0-angler.img
+usage: fastboot [ <option> ] <command>
+
+commands:
+  update <filename>                        reflash device from update.zip
+  flashall                                 flash boot, system, vendor and if found,
+                                           recovery
+  flash <partition> [ <filename> ]         write a file to a flash partition
+  flashing lock                            locks the device. Prevents flashing                                           partitions
+  flashing unlock                          unlocks the device. Allows user to                                           flash any partition except the ones                                           that are related to bootloader
+  flashing lock_critical                   Prevents flashing bootloader related                                           partitions
+  flashing unlock_critical                 Enables flashing bootloader related                                           partitions
+  flashing get_unlock_ability              Queries bootloader to see if the                                           device is unlocked
+  erase <partition>                        erase a flash partition
+  format[:[<fs type>][:[<size>]] <partition> format a flash partition.
+                                           Can override the fs type and/or
+                                           size the bootloader reports.
+  getvar <variable>                        display a bootloader variable
+  boot <kernel> [ <ramdisk> ]              download and boot kernel
+  flash:raw boot <kernel> [ <ramdisk> ]    create bootimage and flash it
+  devices                                  list all connected devices
+  continue                                 continue with autoboot
+  reboot [bootloader]                      reboot device, optionally into bootloader
+  reboot-bootloader                        reboot device into bootloader
+  help                                     show this help message
+
+options:
+  -w                                       erase userdata and cache (and format
+                                           if supported by partition type)
+  -u                                       do not first erase partition before
+                                           formatting
+  -s <specific device>                     specify device serial number
+                                           or path to device port
+  -l                                       with "devices", lists device paths
+  -p <product>                             specify product name
+  -c <cmdline>                             override kernel commandline
+  -i <vendor id>                           specify a custom USB vendor id
+  -b <base_addr>                           specify a custom kernel base address.
+                                           default: 0x10000000
+  -n <page size>                           specify the nand page size.
+                                           default: 2048
+  -S <size>[K|M|G]                         automatically sparse files greater
+                                           than size.  0 to disable
+
+C:\Users\chris\Desktop\Nexus6P-root-master>fastboot flashing recovery twrp-3.1.1-0-angler.img
+usage: fastboot [ <option> ] <command>
+
+commands:
+  update <filename>                        reflash device from update.zip
+  flashall                                 flash boot, system, vendor and if found,
+                                           recovery
+  flash <partition> [ <filename> ]         write a file to a flash partition
+  flashing lock                            locks the device. Prevents flashing                                           partitions
+  flashing unlock                          unlocks the device. Allows user to                                           flash any partition except the ones                                           that are related to bootloader
+  flashing lock_critical                   Prevents flashing bootloader related                                           partitions
+  flashing unlock_critical                 Enables flashing bootloader related                                           partitions
+  flashing get_unlock_ability              Queries bootloader to see if the                                           device is unlocked
+  erase <partition>                        erase a flash partition
+  format[:[<fs type>][:[<size>]] <partition> format a flash partition.
+                                           Can override the fs type and/or
+                                           size the bootloader reports.
+  getvar <variable>                        display a bootloader variable
+  boot <kernel> [ <ramdisk> ]              download and boot kernel
+  flash:raw boot <kernel> [ <ramdisk> ]    create bootimage and flash it
+  devices                                  list all connected devices
+  continue                                 continue with autoboot
+  reboot [bootloader]                      reboot device, optionally into bootloader
+  reboot-bootloader                        reboot device into bootloader
+  help                                     show this help message
+
+options:
+  -w                                       erase userdata and cache (and format
+                                           if supported by partition type)
+  -u                                       do not first erase partition before
+                                           formatting
+  -s <specific device>                     specify device serial number
+                                           or path to device port
+  -l                                       with "devices", lists device paths
+  -p <product>                             specify product name
+  -c <cmdline>                             override kernel commandline
+  -i <vendor id>                           specify a custom USB vendor id
+  -b <base_addr>                           specify a custom kernel base address.
+                                           default: 0x10000000
+  -n <page size>                           specify the nand page size.
+                                           default: 2048
+  -S <size>[K|M|G]                         automatically sparse files greater
+                                           than size.  0 to disable
+
+C:\Users\chris\Desktop\Nexus6P-root-master>fastboot flash recovery twrp-3.1.1-0-angler.img
+target reported max download size of 494927872 bytes
+sending 'recovery' (16948 KB)...
+OKAY [  0.399s]
+writing 'recovery'...
+OKAY [  0.247s]
+finished. total time: 0.648s
+
+C:\Users\chris\Desktop\Nexus6P-root-master>adb reboot bootloader
+error: device '(null)' not found
+
+C:\Users\chris\Desktop\Nexus6P-root-master>adb reboot bootloader
+
+C:\Users\chris\Desktop\Nexus6P-root-master>
+C:\Users\chris\Desktop\Nexus6P-root-master>
+
+
