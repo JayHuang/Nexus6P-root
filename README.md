@@ -1,4 +1,4 @@
-**To Begin Setup:**
+# **Setup:**
 
 • On your phone, navigate to System>About Phone> Scroll to the bottom and tap on Build Number 7 times to enable Developer Options
 
